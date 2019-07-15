@@ -28,7 +28,8 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
+        PictureMailer.picture_mail(@contact).deliver
+        format.html { redirect_to @picture, notice: '記事を投稿しました、確認メールを送信しました。' }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }
@@ -70,5 +71,9 @@ class PicturesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
       params.require(:picture).permit(:image)
+    end
+
+    def contact_params
+      params.require(:picture).permit(:name,:email,:content)
     end
 end
