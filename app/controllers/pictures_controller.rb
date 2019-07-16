@@ -10,6 +10,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
 
   # GET /pictures/new
