@@ -15,20 +15,27 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
+    binding.pry
   end
 
   # GET /pictures/1/edit
   def edit
   end
 
+  def confirm
+    @picture = current_user.pictures.build(picture_params)
+    render :new if @picture.invalid?
+  end
+
   # POST /pictures
   # POST /pictures.json
   def create
-    if picture_params
-      @picture = Picture.new(picture_params)
-    else
-      @picture = Picture
-    end
+    # if picture_params
+    #   @picture = Picture.new(picture_params)
+    # else
+    #   @picture = Picture
+    # end
+    @picture = current_user.pictures.build(picture_params)
 
 
     respond_to do |format|
