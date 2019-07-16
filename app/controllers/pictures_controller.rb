@@ -15,7 +15,6 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
-    binding.pry
   end
 
   # GET /pictures/1/edit
