@@ -36,6 +36,7 @@ class PicturesController < ApplicationController
     #   @picture = Picture
     # end
     @picture = current_user.pictures.build(picture_params)
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
 
 
     respond_to do |format|
