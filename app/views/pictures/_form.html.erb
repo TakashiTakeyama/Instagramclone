@@ -4,9 +4,9 @@
       <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
 
       <ul>
-      <% picture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% picture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -15,6 +15,7 @@
     <%= form.label :image %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
+    <%= form.text_area :content %>
   </div>
 
   <div>
