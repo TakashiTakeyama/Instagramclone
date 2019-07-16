@@ -2,7 +2,7 @@
 
 <p>
   <strong>投稿画像:</strong>
-  <%= image_tag @picture.image.url %>
+  <%= image_tag(@picture.image.url)if @picture.image && @picture.image.url %>
 </p>
 
 <%= link_to '編集', edit_picture_path(@picture) %> |
