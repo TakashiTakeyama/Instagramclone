@@ -10,7 +10,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
-    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
+    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   # GET /pictures/new
@@ -41,7 +41,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.save
         PictureMailer.picture_mail(@picture).deliver
-        format.html { redirect_to @picture, notice: '記事を投稿しました、確認メールを送信しました。' }
+        format.html { redirect_to @picture }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }
