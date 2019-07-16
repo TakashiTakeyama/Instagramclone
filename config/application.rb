@@ -16,5 +16,12 @@ module InstagramClone
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.generations do |g|
+      g.assets false
+      g.helper false
+    end
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
