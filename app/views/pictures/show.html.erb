@@ -15,5 +15,8 @@
   <% end %>
 <%# end %>
 
-<%= link_to '編集', edit_picture_path(@picture) %>
+<% if session[:user_id] == @picture.user_id %>
+  <%= link_to '編集', edit_picture_path(@picture) %>
+  <%= link_to '削除', picture_path, method: :delete, data: { confirm: '本当に削除しますか?' } %>
+<% end %>
 <%= link_to '戻る', pictures_path %>
