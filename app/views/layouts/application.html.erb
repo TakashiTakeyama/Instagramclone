@@ -13,10 +13,14 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-
+  <h2>Instagramclone</h2>
     <% if logged_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+  <div class="top-var">
+    <%= link_to "プロフィール", user_path(current_user.id) %>&nbsp;&nbsp;
+    <%= link_to "みんなの記事", pictures_path %>&nbsp;&nbsp;
+    <%= link_to "お気に入りの記事", okiniiri_favorites_path  %>&nbsp;&nbsp;
+    <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+  </div>
     <% else %>
       <%= link_to "アカウント作成", new_user_path %>
       <%= link_to "ログイン", new_session_path %>

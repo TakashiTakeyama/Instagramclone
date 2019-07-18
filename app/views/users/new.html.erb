@@ -10,22 +10,28 @@
     </ul>
   </div>
 <% end %>
+<div class="container">
+  <%= form_with(model: @user, local: true) do |f| %>
+      <%= f.label :あなたのimage %>
+    <br>
 
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
+    <p id="file">
+      <%= f.file_field :image %>
+    </p>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Create my account" %>
-<% end %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <p><br>
+      <%= f.submit "Create my account" %>
+    </p>
+  <% end %>
+</div>

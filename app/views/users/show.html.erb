@@ -1,12 +1,18 @@
 <h1><%= @user.name %>のページ</h1>
 
-<p>
-  <%= image_tag @user.image.url %>
-</p>
+<div class="profile_contents">
+  <p>
+    <%= image_tag @user.image.url, size: :'150x150' %>
+  </p>
 
-<p>メールアドレス: <%= @user.email %></p>
+  <p>メールアドレス: <%= @user.email %></p>
 
-<%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
-<%= link_to '写真を投稿する', new_picture_path  %>
-<%= link_to '全ての投稿記事をみる', pictures_path %>
-<%= link_to 'お気に入り記事一覧をみる', favorites_okiniiri_path %>
+  <p>
+    <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
+  </p>
+  <p>
+    <%= link_to '写真を投稿する', new_picture_path  %>
+  </p>
+  <%= link_to '全ての投稿記事をみる', pictures_path %>
+  <%= link_to 'お気に入り記事一覧をみる', okiniiri_favorites_path %>
+</div>

@@ -1,3 +1,31 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.profile_contents {
+  text-align: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  background-color: #eeeeee;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.top-var {
+  text-align: right;
+}
+
+.modoru {
+  display: flex;
+  justify-content: center;
+}
+

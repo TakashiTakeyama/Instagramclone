@@ -1,5 +1,10 @@
 <h1>記事を投稿する</h1>
 
+<div class="container">
+
 <%= render 'form', picture: @picture %>
+</div>
+<p class="modoru">
 
 <%= link_to '戻る', user_path(id: current_user.id) %>
+</p>
