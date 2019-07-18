@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :users
   resources :pictures
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  get 'favorites/okiniiri', to: 'favorites#okiniiri'
+  root to: 'users#new'
 end
