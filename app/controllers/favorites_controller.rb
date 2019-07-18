@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
     @favorites = Favorite.all
   end
 
-  def show
+  def okiniiri
     @favorite = current_user.favorites
   end
 end
