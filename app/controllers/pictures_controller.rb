@@ -4,7 +4,12 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
+    if current_user.present?
       @pictures = Picture.all
+    else
+      flash[:notice] = "ログインしてください"
+      redirect_to new_session_path
+    end
   end
 
   # GET /pictures/1
@@ -46,7 +51,6 @@ class PicturesController < ApplicationController
     # end
     @picture = current_user.pictures.build(picture_params)
     @favorite = current_user.favorites.find_by(picture_id: @picture.id)
-
 
     respond_to do |format|
       if @picture.save

@@ -2,6 +2,11 @@
 
 <p>
   <strong>投稿画像:</strong>
+  <%# @picture.each do |picture| %>
+<!--  <tr>-->
+<!--    <td><%#= image_tag picture.image.url %></td>-->
+<!--  </tr>-->
+  <%# end %>
   <%= image_tag(@picture.image.url)if @picture.image && @picture.image.url %>
 </p>
 <p>
@@ -19,4 +24,4 @@
   <%= link_to '編集', edit_picture_path(@picture) %>
   <%= link_to '削除', picture_path, method: :delete, data: { confirm: '本当に削除しますか?' } %>
 <% end %>
-<%= link_to '戻る', pictures_path %>
+<%= link_to '記事一覧へ', pictures_path %>
